@@ -2,7 +2,6 @@
 #include <cstddef>
 #include <filesystem>
 #include <fstream>
-#include <iostream>
 #include <memory>
 #include <stdexcept>
 #include <vector>
