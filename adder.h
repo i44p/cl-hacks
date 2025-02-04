@@ -157,6 +157,10 @@ private:
     std::shared_ptr<std::vector<float>> buf (std::make_shared<std::vector<float>>(size));
     err = clEnqueueReadBuffer(queue, buffer_result_h, CL_TRUE, 0, size * sizeof(float), (void*)&(*buf)[0], 0, NULL, NULL);
     clFinish(queue);
+    clReleaseMemObject(buffer_A_h);
+    clReleaseMemObject(buffer_B_h);
+    clReleaseMemObject(buffer_result_h);
+    
     return buf;
   };
 };
